@@ -29,7 +29,7 @@
 
         # This property refers to the type of the Dataset.
         # Example of frequency using a controlled vocabulary http://dublincore.org/2012/06/14/dctype
-	      dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI ;
+	dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI ;
 
         # This property refers to the frequency at which the Dataset is updated.
         # The possible types are here: http://purl.org/cld/freq/
@@ -42,7 +42,7 @@
 
         # This property refers to a geographic region that is covered by the Dataset.
         dct:spatial [ a dct:Location ;
-          locn:geometry "POLYGON((180.0 -90.0 , -180.0 -90.0, -180.0 90.0 , 180.0 90.0,180.0 -90.0))"^^gsp:wktLiteral ;
+          locn:geometry "POLYGON((-25 57,37 60,57 22,-22 28,-25 57))"^^gsp:wktLiteral ;
         ];
 
         # This property refers to a temporal period that the Dataset covers.
@@ -56,8 +56,8 @@
 <https://envri.eu/example/Distribution/001> a dcat:Distribution ;
         dct:identifier "https://envri.eu/example/Distribution/001" ;
         dct:title "Title of the Distribution" ;
-	      dct:description "Description of the Distribution" ;
-	      dct:issued "2020-01-01"^^xsd:date ;
+	dct:description "Description of the Distribution" ;
+	dct:issued "2020-01-01"^^xsd:date ;
         dct:modified "2020-03-01"^^xsd:date ;
 
         # This property refers to the type of the Distribution. The possible types are
