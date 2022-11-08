@@ -109,7 +109,7 @@
 
 .
 
-<https://envri.eu/example/Operation/001> a hydra:Operation;
+<https://www.epos-eu.org/epos-dcat-ap/example/Operation/001> a hydra:Operation;
   hydra:method "GET";
   # This property is used to specify the output format of the Operation.
   # The possible values are listed here:  https://www.iana.org/assignments/media-types/media-types.xhtml
