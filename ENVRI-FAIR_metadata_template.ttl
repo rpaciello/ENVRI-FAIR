@@ -109,27 +109,34 @@
 
 .
 
-#<https://envri.eu/example/Operation/001> a hydra:Operation;
-   #hydra:method "GET";
-
+<https://envri.eu/example/Operation/001> a hydra:Operation;
+  hydra:method "GET";
   # This property is used to specify the output format of the Operation.
   # The possible values are listed here:  https://www.iana.org/assignments/media-types/media-types.xhtml
-  #hydra:returns "application/xml" ;
+  hydra:returns "application/xml" ;
 
-  #hydra:property[ a hydra:IriTemplate ;
-        	#hydra:template "http://www.test.org/{?param1,param2}"^^xsd:string ;
-        		#hydra:mapping[ a hydra:IriTemplateMapping ;
-                  # This property contains the name of the parameter as required by web service specifications
-                  #hydra:variable "param1"^^xsd:string ;
-		              #rdfs:label "Label of param1" ;
-                  # This property contains true if the property is required, false otherwise.
-                  #hydra:required "true"^^xsd:boolean ;
-                  # This property contains the type of parameter.
-		              # The possible values for this property are: "xsd:string" "xsd:boolean" "xsd:date" " xsd:dateTime" "xsd:decimal" "xsd:double" "xsd:float" "xsd:int" "xsd:integer" "xsd:long";
-                  #rdfs:range "xsd:string" ;
-                  # This property contains the default value of the parameter
-                  #schema:defaultValue "defaultvalue" ;
-           	#];
+  hydra:property[ a hydra:IriTemplate ;
+        hydra:template "http://www.test.org/{?param1,param2}"^^xsd:string ;
+        hydra:mapping[ a hydra:IriTemplateMapping ;
+                hydra:variable "param1"^^xsd:string ;
+		rdfs:label "Label of param1" ;
+                hydra:required "true"^^xsd:boolean ;
+                rdfs:range "xsd:string" ;
+		http:paramValue "value x";
+		http:paramValue "value y";
+
+                  
+        ];
+        hydra:mapping[ a hydra:IriTemplateMapping ;
+                hydra:variable "param2"^^xsd:string ;
+		rdfs:label "Label of param2" ;
+                hydra:required "false"^^xsd:boolean ;
+                rdfs:range "xsd:date" ;
+		schema:valuePattern "YYYY-MM-DD";
+                  
+        ];
+    ];
+.
             #hydra:mapping[ a hydra:IriTemplateMapping ;
                   # This property contains the name of the parameter as required by web service specifications
                   #hydra:variable "param2"^^xsd:string ;
